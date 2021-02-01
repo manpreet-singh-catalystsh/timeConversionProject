@@ -17,9 +17,11 @@ main
 {
     height: calc(100vh - 6vh - 50px);
     width: 100vw;
-    background-color: blueviolet;
+    background-color:#66004b;
     padding: 5px;
-
+    display: flex;
+    flex-direction: row;
+    align-content: center;
 }
 
 footer
@@ -36,7 +38,7 @@ footer
     margin: 20px 10px;
     width:400px;
     height: 400px;
-    border: 4px dashed #EEE;
+    border: 2px groove #EEE;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,8 +49,9 @@ canvas
 {
     width: 90%;
     height: 90%;
-    border:2px solid #FFF;
+    border:4px dashed #FFF;
     border-radius: 50%;
+    border-width: 10px;
 }
 
 .hr , .min ,.sec
@@ -56,7 +59,9 @@ canvas
     position:absolute;
     background-color: #FFF;
     border: 1px solid #567;
+    border-radius: 25%;
     transform-origin: bottom;
+   
 }
 
 .hr
@@ -71,6 +76,7 @@ canvas
     top: 20%;
     height: 120px;
     width: 7px;
+    
 }
 
 .sec

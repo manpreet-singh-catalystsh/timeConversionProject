@@ -12,7 +12,7 @@ var designc2 = clk2.childNodes[1].getContext("2d");
 var designc3 = clk3.childNodes[1].getContext("2d");
 var designc4 = clk4.childNodes[1].getContext("2d");
 designc1.fillStyle="#FFF";
-designc1.font = "20px Arial";
+designc1.font = "20px Aria";
 designc1.fillText("India (GMT+5.30)",60,50);
 
 designc2.fillStyle="#FFF";
@@ -50,18 +50,24 @@ function clockUpdate(clock,time)
     clock.childNodes[5].style.transform=`rotate(${rmin}deg)`;
     clock.childNodes[3].style.transform=`rotate(${rhr}deg)`;
 
+    //------------------------For Digital display -----------------//
+    let notation="AM";
+    if(hr>12)
+    {
+       hr=hr-12;
+       notation="PM";
+    }
     var digitime=clock.childNodes[1].getContext("2d");
     digitime.fillStyle="#66004b";
     digitime.fillRect(20,80,150,30);
     digitime.font = "20px Arial";
     digitime.fillStyle="#FFF";
-    digitime.fillText(hr+":"+min+":"+sec,40,100);
+    digitime.fillText(hr+":"+min+":"+sec+" "+notation,40,100);
 }
 
 
 
 /////function to get current time with argument (0-3.... forclock number)
-
 function getTime(clockno)
 {
     let i = parseInt(clockno);
@@ -71,17 +77,17 @@ function getTime(clockno)
     switch(i)
     {
         case 0:
-            dt.setMinutes(dt.getMinutes() + 5.5*60);
+            dt.setMinutes(dt.getMinutes() + 5.5*60);        //for India
              return dt;
         case 1:
-            dt.setMinutes(dt.getMinutes() + 11*60);
+            dt.setMinutes(dt.getMinutes() + 11*60);         // for sydney
             console.log(dt);
             return dt;
         case 2:
-            dt.setMinutes(dt.getMinutes() + 7*60);
+            dt.setMinutes(dt.getMinutes() + 7*60);          //for Syberia
             return dt;
         case 3:
-            return dt;
+            return dt;                                      //for london...... GMT only
         default :
             window.alert("error getting time....");
     }

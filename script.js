@@ -102,12 +102,13 @@ setInterval(()=>{
 ////function to update clock ui... arguments (clock id and time)
 function clockUpdate(clock,dclock,time)
 {
-    var sec = time.getSeconds();
+    var sec = time.getSeconds() ;
     var min = time.getMinutes();
     var hr = time.getHours();
     var rsec = sec*6;
     var rmin = min*6;
     var rhr = hr*30+min/2;
+
     clock.childNodes[7].style.transform=`rotate(${rsec}deg)`;
     clock.childNodes[5].style.transform=`rotate(${rmin}deg)`;
     clock.childNodes[3].style.transform=`rotate(${rhr}deg)`;

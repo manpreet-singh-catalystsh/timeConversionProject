@@ -28,7 +28,7 @@ main
     display: flex;
     flex-direction: row;
     align-content: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -38,8 +38,6 @@ main
     padding: 40px 0px;
     display: flex;
     flex-direction: column;
-    border:1px solid white;
-    border-radius: 20%;
 }
 
 .cname
@@ -92,18 +90,7 @@ canvas
     background-color: #000;
     border-radius: 35%;
     transform-origin: bottom;
- 
 }
-
-/*@keyframes hands_anim
-{
-    from{
-       transform: rotateZ(0deg); 
-    }
-    to{
-        transform:rotateZ(360deg);
-    }
-}*/
 
 .hr
 {
@@ -126,8 +113,8 @@ canvas
     height: 150px;
     width: 4px;
     background-color:#81D4FA;
-    /*animation: hands_anim 60s linear infinite;*/
 }
+
 
 /*--------------------------Media queries*/
 

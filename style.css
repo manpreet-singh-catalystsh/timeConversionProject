@@ -81,13 +81,14 @@ canvas
 {
     width: 90%;
     height: 90%;
+    z-index: 10;
 }
 
 .hr , .min ,.sec
 {
     position:absolute;
-    background-color: #000;
-    border-radius: 35%;
+    background-color: #FFF;
+    border-radius: 5%;
     transform-origin: bottom;
 }
 
@@ -113,6 +114,7 @@ canvas
     width: 4px;
     background-color:#81D4FA;
     transition: linear 1s;
+    z-index: 100;
 }
 
 

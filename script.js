@@ -28,8 +28,14 @@ markers(designc4);
 
 function markers(design)
 {
+    design.strokeStyle = "#000";
     design.beginPath();
-    design.fillRect(145,70,10,10);
+    design.arc(150, 75, 5, 0, 2 * Math.PI);
+    design.stroke(); 
+    design.fillStyle = "#81D4FA";
+    design.fill();
+
+    design.strokeStyle="#FFF";
 
     design.lineWidth = 2;
     design.strokeStyle="#FFF";

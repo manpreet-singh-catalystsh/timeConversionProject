@@ -82,13 +82,13 @@ function markers(design)
     design.lineTo(40,108);
     design.stroke();
 }
-//calling clockupdate for all clocks at nterval of 1 sec
+//calling clockupdate for all clocks at interval of 1 sec
 setInterval(()=>{
                     clockUpdate(clk1,dclk1,getTime(0));
                     clockUpdate(clk2,dclk2,getTime(1));
                     clockUpdate(clk3,dclk3,getTime(2));
                     clockUpdate(clk4,dclk4,getTime(3));
-                },100);
+                },1000);
 
 ////function to update clock ui... arguments (clock id and time)
 function clockUpdate(clock,dclock,time)

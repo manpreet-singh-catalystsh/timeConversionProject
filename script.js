@@ -82,12 +82,15 @@ function markers(design)
     design.lineTo(40,108);
     design.stroke();
 }
+var rotation=0;
 //calling clockupdate for all clocks at interval of 1 sec
 setInterval(()=>{
                     clockUpdate(clk1,dclk1,getTime(0));
                     clockUpdate(clk2,dclk2,getTime(1));
                     clockUpdate(clk3,dclk3,getTime(2));
                     clockUpdate(clk4,dclk4,getTime(3));
+                    if(new Date().getSeconds()==59)
+                        rotation++;
                 },1000);
 
 ////function to update clock ui... arguments (clock id and time)
@@ -108,7 +111,7 @@ function clockUpdate(clock,dclock,time)
         clock.childNodes[7].style.transition="transform 1s linear";
     }*/
 
-    clock.childNodes[7].style.transform=`rotate(${rsec}deg)`;
+    clock.childNodes[7].style.transform=`rotate(${rsec+360*rotation}deg)`;
     clock.childNodes[5].style.transform=`rotate(${rmin}deg)`;
     clock.childNodes[3].style.transform=`rotate(${rhr}deg)`;
 

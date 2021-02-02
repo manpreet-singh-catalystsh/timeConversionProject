@@ -89,7 +89,7 @@ setInterval(()=>{
                     clockUpdate(clk2,dclk2,getTime(1));
                     clockUpdate(clk3,dclk3,getTime(2));
                     clockUpdate(clk4,dclk4,getTime(3));
-                    if(new Date().getSeconds()==59)
+                    if(new Date().getSeconds()==59)     // -- to stop seconds hands from going counter clockwise after 360deg
                         rotation++;
                 },1000);
 
@@ -102,14 +102,6 @@ function clockUpdate(clock,dclock,time)
     var rsec = (sec*6);
     var rmin = min*6;
     var rhr = hr*30+min/2;
-
-    // -- to stop seconds hands from going counter clockwise after 360deg
-   
-    /*if (rsec == 0) {
-        clock.childNodes[7].style.transition="none";
-    } else {
-        clock.childNodes[7].style.transition="transform 1s linear";
-    }*/
 
     clock.childNodes[7].style.transform=`rotate(${rsec+360*rotation}deg)`;
     clock.childNodes[5].style.transform=`rotate(${rmin}deg)`;

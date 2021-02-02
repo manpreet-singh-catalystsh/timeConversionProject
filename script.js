@@ -1,10 +1,13 @@
 //will rotate clock hands at angles proportionately wrt time.
 
+
+// analog clock elements
 var clk1 = document.getElementById("clock1");
 var clk2 = document.getElementById("clock2");
 var clk3 = document.getElementById("clock3");
 var clk4 = document.getElementById("clock4");
 
+//digital clock elements
 var dclk1 = document.getElementById("dclock1");
 var dclk2 = document.getElementById("dclock2");
 var dclk3 = document.getElementById("dclock3");
@@ -16,6 +19,8 @@ var designc2 = clk2.childNodes[1].getContext("2d");
 var designc3 = clk3.childNodes[1].getContext("2d");
 var designc4 = clk4.childNodes[1].getContext("2d");
 
+
+//to draw markers on clock face
 markers(designc1);
 markers(designc2);
 markers(designc3);
@@ -25,6 +30,9 @@ markers(designc4);
 
 function markers(design)
 {
+
+    design.beginPath();
+    design.fillRect(145,70,10,10);
 
     design.lineWidth = 2;
     design.strokeStyle="#FFF";
@@ -76,17 +84,12 @@ function markers(design)
     design.lineTo(85,130);
     design.stroke();
 
-    design.moveTo(15,110);
-    design.lineTo(33,103);
+    design.moveTo(20,115);
+    design.lineTo(40,108);
     design.stroke();
 }
 
-
-
-
-
-
-
+//calling clockupdate for all clocks at nterval of 1 sec
 setInterval(()=>{
                     clockUpdate(clk1,dclk1,getTime(0));
                     clockUpdate(clk2,dclk2,getTime(1));
@@ -116,13 +119,17 @@ function clockUpdate(clock,dclock,time)
        hr=hr-12;
        notation="PM";
     }
+    else if(hr==0)
+    {
+        hr=12;
+    }
 
     dclock.innerHTML = (hr+" : "+min+" : "+sec+" "+notation);
 }
 
 
 
-/////function to get current time with argument (0-3.... forclock number)
+/////function to get current time with argument (0-3.... for clock number)
 function getTime(clockno)
 {
     let i = parseInt(clockno);
